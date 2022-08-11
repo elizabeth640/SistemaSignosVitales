@@ -7,7 +7,7 @@ if (permitirAcceso($_SESSION['usuarios'], 'antecedentes')) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Wrist Tecnology</title>
+  <title>Wrist Technology</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
@@ -25,7 +25,7 @@ if (permitirAcceso($_SESSION['usuarios'], 'antecedentes')) {
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top "><!--info -->
   <div class="container-fluid ">
     <a class="navbar-brand " href="#">
-      <img src="img/logo.png" alt="logo" style="width:40px;"> Wrist Tecnology </a>
+      <img src="img/logo.png" alt="logo" style="width:40px;"> Wrist Technology </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -191,11 +191,11 @@ if (permitirAcceso($_SESSION['usuarios'], 'antecedentes')) {
             <div class="col-md-4 footer-col text-white">
               <div class="sociales">
                 <h5>Redes Sociales</h5>
-                        <a  target="_blank" href="#" class="facebook"><i style="color:white;" class="fa fa-fw fa-facebook fa-2x"></i></a>
-                        <a  target="_blank" href="#" class="google"><i style="color:white;" class="fa fa-fw fa-google-plus fa-2x"></i></a>
-                        <a  target="_blank" href="#" class="twiter"><i style="color:white;" class="fa fa-fw fa-twitter fa-2x"></i></a>
-                        <a  target="_blank" href="#" class="whatsapp"><i style="color:white;" class="fa fa-fw fa-whatsapp fa-2x"></i></a>
-                        <a  target="_blank" href="#" class="telegram"><i style="color:white;" class="fa fa-fw fa-telegram fa-2x"></i></a>
+                        <a  target="_blank" href="https://es-la.facebook.com/" class="facebook"><i style="color:white;" class="fa fa-fw fa-facebook fa-2x"></i></a>
+                        <a  target="_blank" href="https://www.google.com/intl/es-419/gmail/about/" class="google"><i style="color:white;" class="fa fa-fw fa-google-plus fa-2x"></i></a>
+                        <a  target="_blank" href="https://twitter.com/?lang=es" class="twiter"><i style="color:white;" class="fa fa-fw fa-twitter fa-2x"></i></a>
+                        <a  target="_blank" href="https://www.whatsapp.com/?lang=es" class="whatsapp"><i style="color:white;" class="fa fa-fw fa-whatsapp fa-2x"></i></a>
+                        <a  target="_blank" href="https://web.telegram.org/z/" class="telegram"><i style="color:white;" class="fa fa-fw fa-telegram fa-2x"></i></a>
             </div></div>
             <div class="col-md-4 footer-col text-white">
                 <h5>Mas informacion de la compañia</h5>

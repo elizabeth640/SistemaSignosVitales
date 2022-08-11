@@ -7,7 +7,7 @@ if (permitirAcceso($_SESSION['usuarios'], 'admonUsuario')) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Wrist Tecnology</title>
+  <title>Wrist Technology</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
@@ -28,7 +28,7 @@ if (permitirAcceso($_SESSION['usuarios'], 'admonUsuario')) {
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top "><!--info -->
   <div class="container-fluid ">
     <a class="navbar-brand " href="#">
-      <img src="img/logo.png" alt="logo" style="width:40px;"> Wrist Tecnology </a>
+      <img src="img/logo.png" alt="logo" style="width:40px;"> Wrist Technology </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
