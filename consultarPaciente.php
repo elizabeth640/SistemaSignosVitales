@@ -64,7 +64,7 @@
                       
                       <br>
                         <form action="metodoUsuario.php" method="post">
-                          <input type="hidden" name="opcion" value="2">
+                          <input type="hidden" name="opcion" value="11">
                           <div class="row form-group">
                             <div class="col-md-12" align="center">
                               <label for="curp">Curp:</label>
@@ -72,7 +72,7 @@
                             </div>
                           </div>
                           <div class="col-md-12" align="center">
-                            <input type="submit" value="Aceptar" name="aceptar" class="btn btn-primary"></input>
+                            <input type="submit" value="Aceptar" name="aceptar"  class="btn btn-primary"><a href="admonPaciente.php?paciente_idpaciente='$_REQUEST['curp']'"><i class='fas fa-pencil-alt'style='color:success;'></i></a></input>
                             <input type="reset" value="Limpiar" class="btn btn-success">
                          </div>
                         </form>

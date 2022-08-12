@@ -173,10 +173,10 @@ switch ($opcion) {
 
 		$resultado = $conex->query($sql);
 		if ($resultado) {
-			header("location:editarAntecedentes.php");						
+			header("location:admonAntecedentes.php");						
 		}
 		else{
-			mensaje("Error al Registrar", "Vuelve a intentarlo ", "editarPaciente.php");			
+			mensaje("Error al actualizar", "Vuelve a intentarlo ", "editarPaciente.php");			
 		}
 		break;
 
@@ -207,35 +207,47 @@ switch ($opcion) {
 
 		case 9:
 		$bandera = 0;
-		$CedulaProfesional = $_REQUEST['CedulaProfesional'];
-		$sql = "DELETE FROM usuarios WHERE CedulaProfesional='$CedulaProfesional'";
+		$Curp = $_REQUEST['Curp'];
+		$sql = "DELETE FROM paciente WHERE Curp='$Curp'";
 		$res = $conex->query($sql);
 		if($res){
 			$bandera = 1;
 			if ($bandera==1) {
-				mensaje('F i n a l i z a d o','El usuario ha sido eliminado :)','admonUsuario.php');				
+				mensaje('F i n a l i z a d o','El paciente ha sido eliminado','admonPaciente.php');				
 			}
 		}
 		else{
-				mensaje('¡ E r r o r !','Hubó un error al eliminar :(','admonUsuario.php');
+				mensaje('¡ E r r o r !','Hubó un error al eliminar :(','admonPaciente.php');
 		}
 	break;
 
 	case 10:
 		$bandera = 0;
-		$CedulaProfesional = $_REQUEST['CedulaProfesional'];
-		$sql = "DELETE FROM usuarios WHERE CedulaProfesional='$CedulaProfesional'";
+		$paciente_idpaciente = $_REQUEST['paciente_idpaciente'];
+		$sql = "DELETE FROM antecedentes WHERE paciente_idpaciente='$paciente_idpaciente'";
 		$res = $conex->query($sql);
 		if($res){
 			$bandera = 1;
 			if ($bandera==1) {
-				mensaje('F i n a l i z a d o','El usuario ha sido eliminado :)','admonUsuario.php');				
+				mensaje('F i n a l i z a d o','El paciente ha sido eliminado','admonAntecedentes.php');				
 			}
 		}
 		else{
-				mensaje('¡ E r r o r !','Hubó un error al eliminar :(','admonUsuario.php');
+				mensaje('¡ E r r o r !','Hubó un error al eliminar :(','admonAntecedentes.php');
 		}
 	break;
+
+	case 11:
+		$curp = $_REQUEST['curp'];
+		$sql = "SELECT Curp,NivelesOxigeno,RitmoCardiaco,CaloriasQuemadas,NumeroPasos,DistanciaRecorrida FROM consulta, paciente where consulta.paciente_idpaciente=paciente.idpaciente and  curp = '$curp' ";
+		$resultado = $conex->query($sql);
+		if ($resultado) {
+			header("location:admonConsultar.php");											
+		}
+		else{
+			mensaje("Error al actualizar", "Vuelve a intentarlo ", "editarAntecedentes.php");			
+		}
+		break;
 	}
 
 	?>

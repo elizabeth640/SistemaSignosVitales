@@ -115,7 +115,7 @@ if (permitirAcceso($_SESSION['usuarios'], 'admonPaciente')) {
                      /** EDITAR **/
                      echo "<td style='vertical-align:middle;'> <a href='editarPaciente.php?Curp=". $fila['Curp']."'><i class='fas fa-pencil-alt'style='color:success;'></i></a></td>";
                      /** ELIMINAR  **/
-                     echo "<td style='vertical-align:middle;'> <a href='metodoUsuario.php?opcion=6&Curp=".$fila['Curp']."'> <i class='fas fa-trash-alt'style='color:red;'></i></a></td>"; 
+                     echo "<td style='vertical-align:middle;'> <a href='metodoUsuario.php?opcion=9&Curp=".$fila['Curp']."'> <i class='fas fa-trash-alt'style='color:red;'></i></a></td>"; 
                    }
                    echo "</center>";
                  }

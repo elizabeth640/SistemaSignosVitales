@@ -2,7 +2,7 @@
 session_start();
 include ('db.php');
 include('privilegio.php');
-if (permitirAcceso($_SESSION['usuarios'], 'admonPaciente')) {
+if (permitirAcceso($_SESSION['usuarios'], 'admonConsultar')) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,23 +64,15 @@ if (permitirAcceso($_SESSION['usuarios'], 'admonPaciente')) {
 <br><br><br>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-               <li class="breadcrumb-item active"><a href="admonPaciente.php">Registro</a></li>
-              <li class="breadcrumb-item" aria-current="page">Antecedentes</a></li>
-            </ol>
-         </nav>
-        </div>
+        
         <div class="col-md-1"></div>
                                
               <div class="col-md-10" align="right"> 
                 <button type="button" class="btn btn-secondary"><a href="inicioMedico.php"class="text-white" style="text-decoration:none">Regresar</a></button>
                 <div class="row form-group text-center">
-                <h3 class="lead" style="font-size: 30px">Antecedentes de los usuarios existentes en el sistema</h3>
-                <hr class="bg-info">
-                <hr>
-                                                
+               
+                <h3 class="lead" style="font-size: 30px">Signos vitales</h3>
+                                    
             </div>           
 
             <section>
@@ -90,33 +82,30 @@ if (permitirAcceso($_SESSION['usuarios'], 'admonPaciente')) {
                     
                     <?php
                     include('db.php');
-                    $sql= "SELECT paciente_idpaciente,Alcohol,Tabaco,Alimetacion FROM `antecedentes`";
+                    $sql= "SELECT Curp,NivelesOxigeno,RitmoCardiaco,CaloriasQuemadas,NumeroPasos,DistanciaRecorrida FROM consulta, paciente where consulta.paciente_idpaciente=paciente.idpaciente ";
                     $resultado = $conex->query($sql);
-
                     if ($resultado->num_rows>0) {
                       echo "<center>";
                       echo "<table class='table table-striped table-light text-center table-hover'>";
-                      echo "<th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>Id paciente</b></b></h5></th>
-                      <th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>Alcohol</b></b></h5></th>                    
-                      <th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>Tabaco</b></b></h5></th>
-                      <th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>Alimentacion</b></b></h5></th>
-                      <th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>Editar</b></b></h5></th>                    
-                      <th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>Eliminar</b></b></h5></th>";
+                      echo "<th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>Curp Paciente</b></b></h5></th>
+                      <th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>NivelesOxigeno</b></b></h5></th>                    
+                      <th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>RitmoCardiaco</b></b></h5></th>
+                      <th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>CaloriasQuemadas</b></b></h5></th>
+                      <th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>NumeroPasos</b></b></h5></th>
+                      <th style='vertical-align:middle;'><h5 class='lead' style='font-size: 17px'><b><b>DistanciaRecorrida</b></b></h5></th>";
 
 
                       while ($fila=$resultado->fetch_assoc()) 
                       {
                         echo "<tr>";                                                        
-                        echo "<td style='vertical-align:middle;'>".$fila['paciente_idpaciente']. "</td>";
-                        echo "<td style='vertical-align:middle;'>".$fila['Alcohol']. "</td>";
-                        echo "<td style='vertical-align:middle;'>".$fila['Tabaco']. "</td>";
-                        echo "<td style='vertical-align:middle;'>".$fila['Alimetacion']. "</td>";
+                        echo "<td style='vertical-align:middle;'>".$fila['Curp']. "</td>";
+                        echo "<td style='vertical-align:middle;'>".$fila['NivelesOxigeno']. "</td>";
+                        echo "<td style='vertical-align:middle;'>".$fila['RitmoCardiaco']. "</td>";
+                        echo "<td style='vertical-align:middle;'>".$fila['CaloriasQuemadas']. "</td>";
+                        echo "<td style='vertical-align:middle;'>".$fila['NumeroPasos']. "</td>";
+                        echo "<td style='vertical-align:middle;'>".$fila['DistanciaRecorrida']. "</td>";
 
-                        
-                     /** EDITAR **/
-                     echo "<td style='vertical-align:middle;'> <a href='editarAntecedentes.php?paciente_idpaciente=". $fila['paciente_idpaciente']."'><i class='fas fa-pencil-alt'style='color:success;'></i></a></td>";
-                     /** ELIMINAR  **/
-                     echo "<td style='vertical-align:middle;'> <a href='metodoUsuario.php?opcion=10&paciente_idpaciente=".$fila['paciente_idpaciente']."'> <i class='fas fa-trash-alt'style='color:red;'></i></a></td>"; 
+                  
                    }
                    echo "</center>";
                  }
@@ -133,6 +122,5 @@ if (permitirAcceso($_SESSION['usuarios'], 'admonPaciente')) {
       else
         header('Location:login.php');
     ?>
-
   </body>
 </html>

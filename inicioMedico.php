@@ -109,7 +109,7 @@ if (permitirAcceso($_SESSION['usuarios'], 'inicioMedico')) {
               <div class="card-body text-dark" align="center">
                 <h5 class="card-title lead text-center" style="font-size: 20px">Consultar Pacientes</h5>
                 <p class="card-text lead" style="font-size: 15px">Consulta los datos de los pacientes.</p>
-                <a href="consultarPaciente.php" class="btn btn-info" >Buscar</a>
+                <a href="admonConsultar.php" class="btn btn-info" >Buscar</a>
               </div>
             </div>
           </div>
